@@ -41,7 +41,6 @@
     --dark-bt-light:#343a40;
     --dark-bt-dark:white;
 
-    
     --dark-bt:var(--dark-bt-dark);
     --span-text-color:var(--span-text-dark);
     --span-color:var(--span-dark);
@@ -54,6 +53,7 @@
 body{
     background-color:var(--bg-color);
 }
+h2{ color:var(--text-color);}
 .dark-mode-toggle {
     position: absolute;
     z-index: 100;
@@ -136,6 +136,7 @@ tr {
 }
 .modal-content{
     background-color:var(--modal-bg);
+    color:var(--text-color);
 }
 .modal-header {
     border-bottom: 0px;
