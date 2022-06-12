@@ -21,6 +21,11 @@
           <a href="/" class="navbar-brand d-flex align-items-center">
               <strong><i class="far fa-futbol"></i> Sklep komputerowy</strong>
           </a>
+          <li class="nav-item">
+            <button id="dark-mode-toggle" class="dark-mode-toggle">
+              <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496"><path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/></svg>
+            </button>
+          </li>
         </nav>
     </header><br />
     <main>
@@ -44,3 +49,13 @@
     </main>
     </body>
 </html>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<!-- Custom JS Scripts -->
+<script src="{{ url_for('static',filename='js/myscripts.js') }}"></script>
+<script src="{{ url_for('static',filename='js/validate.js') }}"></script>
+</body>

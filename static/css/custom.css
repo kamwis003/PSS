@@ -1,10 +1,85 @@
+:root{
+    --border-color-light:#999;
+    --border-color-dark:white;
+    --bg-light:beige;
+    --bg-dark:#343a40;
+    --text-light:black;
+    --text-dark:rgba(255,255,255,.5);
+    --span-light:black;
+    --span-dark:rgba(255,255,255,.5);
+    --span-text-light:black;
+    --span-text-dark:white;
+    --card-border-light:#999;
+    --card-border-dark:rgba(255,255,255,.1);
+    --dark-bt-light:#343a40;
+    --dark-bt-dark:white;
+
+
+    --dark-bt:var(--dark-bt-light);
+    --span-text-color:var(--span-text-light);
+    --span-color:var(--span-light);
+    --card-border:var(--card-border-light);
+    --border-color:var(--border-color-light);
+    --bg-color:var(--bg-light);
+    --text-color:var(--text-light);
+    --modal-bg:var(--bg-color);
+}
+
+.darkmode{
+    --border-color-light:#999;
+    --border-color-dark:white;
+    --bg-light:beige;
+    --bg-dark:#343a40;
+    --text-light:black;
+    --text-dark:rgba(255,255,255,.5);
+    --span-light:black;
+    --span-dark:rgba(255,255,255,.5);    
+    --span-text-light:black;
+    --span-text-dark:white;
+    --card-border-light:#999;
+    --card-border-dark:rgba(255,255,255,.1);
+    --dark-bt-light:#343a40;
+    --dark-bt-dark:white;
+
+    --dark-bt:var(--dark-bt-dark);
+    --span-text-color:var(--span-text-dark);
+    --span-color:var(--span-dark);
+    --card-border:var(--card-border-dark);
+    --border-color:var(--border-color-dark);
+    --bg-color:var(--bg-dark);
+    --text-color:var(--text-dark);
+    --modal-bg:var(--bg-color);
+}
+body{
+    background-color:var(--bg-color);
+}
+h2{ color:var(--text-color);}
+.dark-mode-toggle {
+    position: absolute;
+    z-index: 100;
+    top: 4em;
+    right: 1em;
+    color: var(--dark-bt);
+    border: 2px solid currentColor;
+    padding: 4px;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+  }
+
 .card:hover {
-    border-color: #999;
-    box-shadow: 1px 2px #999;
+    border-color: var(--border-color);
+    box-shadow: 1px 2px var(--border-color);
 }
 
 .card {
     margin-bottom: 1em;
+    background-color: var(--bg-color);
+    color:var(--text-color);
+    border: 1px solid var(--card-border);
+
 }
 
 .price {
@@ -59,7 +134,10 @@ header {
 tr {
     text-align: center;
 }
-
+.modal-content{
+    background-color:var(--modal-bg);
+    color:var(--text-color);
+}
 .modal-header {
     border-bottom: 0px;
 }
@@ -75,12 +153,12 @@ tr {
 .decrement{
         height: 24px;
         width: 24px;
-        border: 1px solid #222;
+        border: 1px solid var(--span-color);
         text-align: center;
         box-sizing: border-box;
         border-radius: 50%;
         text-decoration: none;
-        color: #222;
+        color: var(--span-color);
         font-size: 24px;
         line-height: 22px;
         display: inline-block;
@@ -105,6 +183,10 @@ tr {
         text-align: center;
         margin: 0 12px;
         border-radius: 2px;
-        border: 1px solid #222;
-        
+        border: 1px solid var(--span-color);
+        background-color: var(--bg-color);
+        color:var(--span-text-color);
+}
+.darkmodetext{
+    align-items: flex-end;
 }
