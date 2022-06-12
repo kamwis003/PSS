@@ -1,7 +1,7 @@
 :root{
     --border-color-light:#999;
     --border-color-dark:white;
-    --bg-light:white;
+    --bg-light:beige;
     --bg-dark:#343a40;
     --text-light:black;
     --text-dark:rgba(255,255,255,.5);
@@ -28,7 +28,7 @@
 .darkmode{
     --border-color-light:#999;
     --border-color-dark:white;
-    --bg-light:white;
+    --bg-light:beige;
     --bg-dark:#343a40;
     --text-light:black;
     --text-dark:rgba(255,255,255,.5);
