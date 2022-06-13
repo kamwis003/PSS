@@ -156,7 +156,7 @@ def checkout():
 
 @app.route("/remove/", methods=["GET"])
 def remove():
-    # Get the id of shirt selected to be removed
+    # Get the id of item selected to be removed
     out = int(request.args.get("id"))
     # Remove item from shopping cart
     db.execute("DELETE from cart WHERE id=:id", id=out)
