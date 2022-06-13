@@ -92,7 +92,7 @@ def update():
         team = goods[0]["team"]
         image = goods[0]["image"]
         subTotal = qty * price
-        # Insert selected shirt into shopping cart
+        # Insert selected item into shopping cart
         db.execute("INSERT INTO cart (id, qty, team, image, price, subTotal) VALUES (:id, :qty, :team, :image, :price, :subTotal)", id=id, qty=qty, team=team, image=image, price=price, subTotal=subTotal)
         shoppingCart = db.execute("SELECT team, image, SUM(qty), SUM(subTotal), price, id FROM cart GROUP BY team")
         shopLen = len(shoppingCart)
