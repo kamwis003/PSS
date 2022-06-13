@@ -42,12 +42,12 @@ def buy():
     totItems, total, display = 0, 0, 0
     qty = int(request.args.get('quantity'))
     if session:
-        # Store id of the selected shirt
+        # Store id of the selected item
         id = int(request.args.get('id'))
-        # Select info of selected shirt from database
+        # Select info of selected item from database
         goods = db.execute("SELECT * FROM shirts WHERE id = :id", id=id)
-        # Extract values from selected shirt record
-        # Check if shirt is on sale to determine price
+        # Extract values from selected item record
+        # Check if item is on sale to determine price
         if(goods[0]["onSale"] == 1):
             price = goods[0]["onSalePrice"]
         else:
@@ -55,7 +55,7 @@ def buy():
         team = goods[0]["team"]
         image = goods[0]["image"]
         subTotal = qty * price
-        # Insert selected shirt into shopping cart
+        # Insert selected item into shopping cart
         db.execute("INSERT INTO cart (id, qty, team, image, price, subTotal) VALUES (:id, :qty, :team, :image, :price, :subTotal)", id=id, qty=qty, team=team, image=image, price=price, subTotal=subTotal)
         shoppingCart = db.execute("SELECT team, image, SUM(qty), SUM(subTotal), price, id FROM cart GROUP BY team")
         shopLen = len(shoppingCart)
@@ -63,7 +63,7 @@ def buy():
         for i in range(shopLen):
             total += shoppingCart[i]["SUM(subTotal)"]
             totItems += shoppingCart[i]["SUM(qty)"]
-        # Select all shirts for home page view
+        # Select all items for home page view
         shirts = db.execute("SELECT * FROM shirts ORDER BY team ASC")
         shirtsLen = len(shirts)
         # Go back to home page
@@ -78,13 +78,13 @@ def update():
     totItems, total, display = 0, 0, 0
     qty = int(request.args.get('quantity'))
     if session:
-        # Store id of the selected shirt
+        # Store id of the selected item
         id = int(request.args.get('id'))
         db.execute("DELETE FROM cart WHERE id = :id", id=id)
-        # Select info of selected shirt from database
+        # Select info of selected item from database
         goods = db.execute("SELECT * FROM shirts WHERE id = :id", id=id)
-        # Extract values from selected shirt record
-        # Check if shirt is on sale to determine price
+        # Extract values from selected item record
+        # Check if item is on sale to determine price
         if(goods[0]["onSale"] == 1):
             price = goods[0]["onSalePrice"]
         else:
@@ -158,7 +158,7 @@ def checkout():
 def remove():
     # Get the id of shirt selected to be removed
     out = int(request.args.get("id"))
-    # Remove shirt from shopping cart
+    # Remove item from shopping cart
     db.execute("DELETE from cart WHERE id=:id", id=out)
     # Initialize shopping cart variables
     totItems, total, display = 0, 0, 0
@@ -216,7 +216,7 @@ def history():
     shoppingCart = []
     shopLen = len(shoppingCart)
     totItems, total, display = 0, 0, 0
-    # Retrieve all shirts ever bought by current user
+    # Retrieve all items ever bought by current user
     myShirts = db.execute("SELECT * FROM purchases WHERE uid=:uid", uid=session["uid"])
     myShirtsLen = len(myShirts)
     # Render table with shopping history of current user
