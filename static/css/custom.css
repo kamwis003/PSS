@@ -31,7 +31,7 @@
     --bg-light:beige;
     --bg-dark:#343a40;
     --text-light:black;
-    --text-dark:rgba(255,255,255,.5);
+    --text-dark:rgba(255, 255, 255, 0.5);
     --span-light:black;
     --span-dark:rgba(255,255,255,.5);    
     --span-text-light:black;
@@ -87,6 +87,10 @@ h2{ color:var(--text-color);}
     font-weight: bold;    
 }
 
+.history{
+    color: var(--text-color);
+}
+
 .price:before {
     content: '$';
 }
@@ -133,6 +137,12 @@ header {
 
 tr {
     text-align: center;
+}
+.modal-title{
+    color:var(--text-color);
+}
+.shoppingCart {
+    color:var(--text-color);
 }
 .modal-content{
     background-color:var(--modal-bg);
